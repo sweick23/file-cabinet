@@ -17,9 +17,17 @@
 
 				- else
 					= link_to 'Log in', new_user_session_path
-
-	%p.notice= notice
-	%p.alert= alert
+	.messages
+		%p.notice= notice
+		%p.alert= alert
 
 	= yield
+
+	- if user_signed_in?
+
+	-else
+		%br
+		%footer
+			%br
+			%p Shane Weickum &copy; 2018 
 
